@@ -1,0 +1,16 @@
+# Model
+model/*.keras
+
+# Python
+__pycache__/
+*.pyc
+
+# Reports
+reports/
+
+# Notebook cache
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+.venv/
