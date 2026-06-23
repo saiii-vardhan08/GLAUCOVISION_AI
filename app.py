@@ -7,6 +7,7 @@ from predict import predict_glaucoma
 from pdf_report import create_pdf_report
 from gradcam import generate_gradcam
 
+
 st.set_page_config(
     page_title="Glaucoma Detection AI",
     page_icon="👁️",
