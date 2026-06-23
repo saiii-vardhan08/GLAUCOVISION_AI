@@ -2,9 +2,28 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
+import os
+import gdown
+
 MODEL_PATH = "model/best_convnext_fixed.keras"
 
-# Load model once
+FILE_ID = "1V5v5ScU0r0ysaxisggFoWSdjqD2Q8OP4"
+
+os.makedirs(
+    "model",
+    exist_ok=True
+)
+
+if not os.path.exists(MODEL_PATH):
+
+    url = f"https://drive.google.com/uc?id={FILE_ID}"
+
+    gdown.download(
+        url,
+        MODEL_PATH,
+        quiet=False
+    )
+
 model = tf.keras.models.load_model(
     MODEL_PATH,
     compile=False
