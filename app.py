@@ -3,8 +3,9 @@ from PIL import Image
 import time
 import os
 
-from utils.predict import predict_glaucoma
-from utils.pdf_report import create_pdf_report
+from predict import predict_glaucoma
+from pdf_report import create_pdf_report
+from gradcam import generate_gradcam
 
 st.set_page_config(
     page_title="Glaucoma Detection AI",
