@@ -74,120 +74,258 @@ st.markdown("---")
 st.markdown("""
 <style>
 
-/* MAIN BACKGROUND */
-.stApp{
-    background: #F5F7F4;
+/* =========================================================
+   GLAUCOVISION AI — THEME AWARE UI
+   ========================================================= */
+
+
+/* ================================
+   MAIN BACKGROUND
+================================ */
+
+.stApp {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
 }
 
-/* TEXT */
-h1,h2,h3,h4,h5,h6{
-    color:#1E293B !important;
+
+/* ================================
+   TEXT
+================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color) !important;
 }
 
-p,span,label{
-    color:#475569 !important;
+p, label {
+    color: var(--text-color) !important;
 }
 
-/* CARDS */
-div[data-testid="stVerticalBlockBorderWrapper"]{
-    background:white !important;
-    border:1px solid #E2E8F0 !important;
-    border-radius:18px !important;
-    padding:20px !important;
-    box-shadow:0px 4px 15px rgba(0,0,0,0.06);
+
+/* ================================
+   CARDS
+================================ */
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: var(--secondary-background-color) !important;
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
+    border-radius: 18px !important;
+    padding: 20px !important;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* SUCCESS BOXES */
-div[data-baseweb="notification"]{
-    border-radius:14px !important;
+
+/* ================================
+   SUCCESS / WARNING / ERROR
+================================ */
+
+div[data-baseweb="notification"] {
+    border-radius: 14px !important;
 }
 
-/* BUTTON */
+
+/* ================================
+   BUTTONS
+================================ */
+
 .stButton > button,
-.stDownloadButton > button{
+.stDownloadButton > button {
 
-    background:#73C167 !important;
-    color:white !important;
+    background: #73C167 !important;
+    color: white !important;
 
-    border:none !important;
-    border-radius:12px !important;
+    border: none !important;
+    border-radius: 12px !important;
 
-    font-weight:600 !important;
+    font-weight: 600 !important;
 
-    padding:12px 24px !important;
+    padding: 12px 24px !important;
 
-    transition:0.3s;
+    transition: 0.3s ease !important;
 }
 
 .stButton > button:hover,
-.stDownloadButton > button:hover{
+.stDownloadButton > button:hover {
 
-    background:#5FAE52 !important;
-    color:white !important;
+    background: #5FAE52 !important;
+    color: white !important;
 }
 
-/* FILE UPLOADER */
-section[data-testid="stFileUploader"]{
+/* =========================================================
+   FILE UPLOADER — DARK OUTLINE
+========================================================= */
 
-    background:white;
-
-    border:2px dashed #D8E4D3;
-
-    border-radius:16px;
-
-    padding:15px;
-}
-/* FORCE WHITE FILE UPLOADER TEXT */
-
-[data-testid="stFileUploader"] *{
-    color:white !important;
-}
-/* METRICS */
-div[data-testid="metric-container"]{
-
-    background:white;
-
-    border:1px solid #E2E8F0;
-
-    border-radius:14px;
-
-    padding:15px;
-
-    box-shadow:0px 2px 8px rgba(0,0,0,0.04);
-}
-/* METRIC TEXT COLORS */
-
-[data-testid="stMetricLabel"]{
-    color:#475569 !important;
+section[data-testid="stFileUploader"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
 }
 
-[data-testid="stMetricValue"]{
-    color:#0F172A !important;
-    font-weight:700 !important;
-}
-/* IMAGE */
-img{
-    border-radius:16px !important;
+
+/* Actual drag-and-drop area */
+
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] {
+
+    background: var(--secondary-background-color) !important;
+
+    border: none !important;
+
+    border-radius: 16px !important;
+
+    padding: 15px !important;
+
+    /* THIS creates the visible dark box */
+    box-shadow: inset 0 0 0 2px #1E293B !important;
+
+    box-sizing: border-box !important;
 }
 
-/* EXPANDER */
-details{
-    background:white;
-    border-radius:12px;
-    padding:10px;
+
+/* Text */
+
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] label,
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] span,
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] small {
+
+    color: var(--text-color) !important;
 }
 
-/* HORIZONTAL LINE */
-hr{
-    border:0;
-    border-top:1px solid #E2E8F0;
+
+/* Browse button */
+
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] button {
+
+    background: var(--secondary-background-color) !important;
+
+    color: var(--text-color) !important;
+
+    border: 1px solid #1E293B !important;
+
+    border-radius: 8px !important;
 }
 
-/* FOOTER */
-.footer-text{
-    text-align:center;
-    color:#64748B;
-    font-size:14px;
+
+/* Browse hover */
+
+section[data-testid="stFileUploader"]
+div[data-testid="stFileUploaderDropzone"] button:hover {
+
+    border-color: #73C167 !important;
+
+    color: #73C167 !important;
+}
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+div[data-testid="metric-container"] {
+
+    background: var(--secondary-background-color) !important;
+
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
+
+    border-radius: 14px !important;
+
+    padding: 15px !important;
+
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* Metric label */
+
+[data-testid="stMetricLabel"] {
+    color: var(--text-color) !important;
+}
+
+
+/* Metric value */
+
+[data-testid="stMetricValue"] {
+    color: var(--text-color) !important;
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+img {
+    border-radius: 16px !important;
+}
+
+
+/* =========================================================
+   EXPANDER
+========================================================= */
+
+details {
+
+    background: var(--secondary-background-color) !important;
+
+    color: var(--text-color) !important;
+
+    border-radius: 12px !important;
+
+    padding: 10px !important;
+}
+
+details summary {
+    color: var(--text-color) !important;
+}
+
+
+/* =========================================================
+   HORIZONTAL LINE
+========================================================= */
+
+hr {
+
+    border: 0 !important;
+
+    border-top: 1px solid rgba(128, 128, 128, 0.25) !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-text {
+
+    text-align: center;
+
+    color: var(--text-color);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DARK MODE EXTRA CONTRAST
+========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    section[data-testid="stFileUploader"]
+    div[data-testid="stFileUploaderDropzone"] {
+
+        border-color: #CBD5E1 !important;
+    }
+
+    section[data-testid="stFileUploader"]
+    div[data-testid="stFileUploaderDropzone"] button {
+
+        border-color: #CBD5E1 !important;
+    }
 }
 
 </style>
