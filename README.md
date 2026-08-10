@@ -1,320 +1,257 @@
-# 👁️ GLAUCOVISION AI
+GLAUCOVISION AI
+AI-Powered Glaucoma Screening System using ConvNeXt-Tiny
 
-## AI-Powered Glaucoma Screening System using Deep Learning and ConvNeXt-Tiny
+GLAUCOVISION AI is an end-to-end deep learning application for automated glaucoma screening from retinal fundus images. The system uses a fine-tuned ConvNeXt-Tiny model to classify images as Normal or Glaucoma, generate confidence and risk assessments, and produce downloadable screening reports through a Streamlit web application.
 
-GLAUCOVISION AI is an end-to-end deep learning application developed for automated glaucoma screening using retinal fundus images. The system leverages a fine-tuned ConvNeXt-Tiny architecture to classify retinal images as either **Normal** or **Glaucoma**, while providing confidence scores, risk assessment, clinical interpretation, and downloadable PDF reports through an interactive Streamlit web application.
+Live Demo: https://glaucovisionai-2gmtotw5bz5epjwxdpygry.streamlit.app/
 
----
+Problem Statement
 
-# 📌 Problem Statement
+Glaucoma can cause irreversible vision loss, making early screening important. This project explores how deep learning can assist retinal image screening by providing fast and accessible automated predictions.
 
-Glaucoma is one of the leading causes of irreversible blindness worldwide. Since optic nerve damage caused by glaucoma cannot be reversed, early detection plays a crucial role in preventing severe vision loss.
+The objective was to build a complete AI system rather than stopping at model training, covering data preparation, model development, evaluation, inference, application development, reporting, and deployment.
 
-Traditional glaucoma diagnosis requires specialist examination and clinical expertise, which may not always be accessible in resource-constrained environments. This project aims to explore how Deep Learning can assist in the early screening process by providing rapid and automated analysis of retinal fundus images.
-
----
-
-# 🎯 Project Objectives
-
-* Develop an AI-powered glaucoma screening system.
-* Classify retinal fundus images into Normal and Glaucoma categories.
-* Generate confidence scores and risk assessments.
-* Provide clinical interpretation of predictions.
-* Generate downloadable PDF reports.
-* Deploy an easy-to-use web application for practical usage.
-
----
-
-# 📂 Dataset
-
-The project utilizes retinal fundus images categorized into:
-
-* Normal
-* Glaucoma
-
-### Dataset Distribution
-
-| Split      | Images |
-| ---------- | ------ |
-| Train      | 8000   |
-| Validation | 770    |
-| Test       | 770    |
-
-### Image Resolution
-
-* Original Resolution: 512 × 512
-* Model Input Resolution: 384 × 384
-
----
-
-# ⚠️ Challenges Faced
-
-## 1. Medical Image Variability
-
-Retinal fundus images exhibited significant variations in:
-
-* Illumination
-* Contrast
-* Retinal pigmentation
-* Image quality
-
-These variations affected model generalization and prediction consistency.
-
-## 2. Overfitting Risk
-
-Medical imaging datasets are comparatively smaller than large-scale natural image datasets. Initial experiments showed signs of overfitting, requiring careful use of transfer learning and fine-tuning strategies.
-
-## 3. Clinical Reliability
-
-High accuracy alone is insufficient in healthcare applications. False predictions can have serious consequences, making confidence analysis and risk assessment equally important.
-
-## 4. Deployment Challenges
-
-Transforming a trained model into a user-friendly application required:
-
-* Real-time image preprocessing
-* Error handling
-* PDF report generation
-* User experience optimization
-* Deployment considerations
-
----
-
-# 🤖 Why ConvNeXt-Tiny?
-
-Several CNN architectures were evaluated before selecting ConvNeXt-Tiny.
-
-ConvNeXt-Tiny was chosen because it offers:
-
-* Strong feature extraction capability
-* Modernized CNN design inspired by Vision Transformers
-* Excellent performance on image classification tasks
-* Better computational efficiency than larger architectures
-* Practical suitability for deployment
-
-### Framework
-
-* TensorFlow
-* Keras
-
----
-
-# 🔬 Methodology
-
-## Step 1: Image Preprocessing
-
-Each retinal image undergoes:
-
-* Resizing to 384 × 384
-* RGB conversion
-* Tensor preparation
-* Model-ready formatting
-
----
-
-## Step 2: Deep Learning Model
-
-### Architecture
-
-ConvNeXt-Tiny
-
-### Approach
-
-* Transfer Learning
-* Fine-Tuning
-* Binary Classification
-
-### Classes
-
-* Normal
-* Glaucoma
-
----
-
-## Step 3: Evaluation
-
-The model was evaluated using an independent test dataset.
-
-### Evaluation Metrics
-
-* Accuracy
-* ROC-AUC
-* Confidence Score Analysis
-* Error Analysis
-
----
-
-#  Unique Project Workflow
-
-Unlike many academic glaucoma classification projects that stop at model training and evaluation, this project implements a complete end-to-end AI workflow.
-
+Solution
 Retinal Fundus Image
-
-↓ Upload
-
-↓ Preprocessing
-
-↓ ConvNeXt-Tiny Inference
-
-↓ Confidence Score Calculation
-
-↓ Risk Assessment
-
-↓ Clinical Interpretation
-
-↓ PDF Report Generation
-
-↓ Streamlit Deployment
-
-This transforms the project from a research prototype into a practical screening application.
-
----
-
-# 📊 Results
-
-| Metric            | Score      |
-| ----------------- | ---------- |
-| Test Accuracy     | 89.35%     |
-| ROC-AUC Score     | 0.953      |
-| Test Dataset Size | 770 Images |
-
-### Key Observations
-
-* Strong separation between Normal and Glaucoma classes.
-* Consistent confidence score generation.
-* Practical performance suitable for screening assistance.
-
----
-
-# 🔍 Error Analysis
-
-Observed failure cases included:
-
-### False Positives
-
-Some normal retinal images displayed optic disc characteristics resembling glaucoma patterns.
-
-### False Negatives
-
-Certain glaucoma cases exhibited subtle visual abnormalities that were difficult for the model to distinguish.
-
-### Additional Factors
-
-* Low-quality retinal scans
-* Poor illumination
-* Borderline clinical cases
-
-Future improvements can focus on larger datasets and explainable AI techniques.
-
----
-
-# 💻 Application Features
-
-### AI Features
-
-* Glaucoma Detection
-* Confidence Score Calculation
-* Risk Level Assessment
-* Clinical Interpretation
-
-### User Features
-
-* Retinal Fundus Image Upload
-* Real-Time Prediction
-* Downloadable PDF Report
-* Error Handling
-* Responsive Streamlit Interface
-
-### Deployment Features
-
-* Lightweight Architecture
-* Browser-Based Access
-* Easy Integration
-
----
-
-#  Technology Stack
-
-## Deep Learning
-
-* TensorFlow
-* Keras
-* ConvNeXt-Tiny
-
-## Data Processing
-
-* NumPy
-* Pillow
-
-## Deployment
-
-* Streamlit
-
-## Reporting
-
-* ReportLab
-
-## Programming Language
-
-* Python
-
----
-
-# 📈 Future Improvements
-
-Potential future enhancements include:
-
-* Multi-class retinal disease classification
-* Larger clinical datasets
-* Explainable AI techniques
-* Cloud API deployment
-* Integration with ophthalmology workflows
-* Clinical decision support systems
-
----
-
-# 🎓 Key Learnings
-
-Through this project, I gained hands-on experience in:
-
-* Deep Learning model development
-* Medical image classification
-* Transfer Learning
-* Model evaluation and error analysis
-* Streamlit application development
-* PDF report generation
-* End-to-end AI deployment workflows
-
-This project strengthened my understanding of how machine learning models can be transformed into complete real-world applications.
-
----
-
-# ✅ Conclusion
-
-GLAUCOVISION AI demonstrates how deep learning can assist in early glaucoma screening through automated retinal image analysis.
-
-By combining ConvNeXt-Tiny, confidence-based risk assessment, clinical interpretation, PDF reporting, and an interactive Streamlit application, the project delivers a complete end-to-end AI screening workflow rather than a standalone classification model.
-
-The system achieved a **Test Accuracy of 89.35%** and a **ROC-AUC Score of 0.953**, demonstrating strong predictive capability while maintaining practical usability through deployment.
-
----
-
-# 👨‍💻 Author
-
-**K. Saivardhan Goud**
-
-B.Tech – Electronics & Communication Engineering (9.84 - current CGPA)
-KL University Hyderabad
-
-Areas of Interest:
-
-* Artificial Intelligence
-* Machine Learning
-* Deep Learning
-* Computer Vision
-* Generative AI
-
-Focused on building end-to-end AI applications that combine research, model development, deployment, and user-centric experiences.
-
-GitHub: GitHub: [K. Saivardhan Goud](https://github.com/saiii-vardhan08)
-LinkedIn: LinkedIn: [Connect on LinkedIn](www.linkedin.com/in/saivardhangoudk08)
+        ↓
+Image Preprocessing
+        ↓
+384 × 384 RGB Input
+        ↓
+ConvNeXt-Tiny
+        ↓
+Normal / Glaucoma
+        ↓
+Confidence Score
+        ↓
+Risk Assessment
+        ↓
+Prediction Explanation
+        ↓
+PDF Report
+        ↓
+Streamlit Web Application
+Dataset
+
+The dataset contains retinal fundus images belonging to two classes:
+
+Normal
+Glaucoma
+Split	Images
+Training	8,000
+Validation	770
+Test	770
+Total	9,540
+Property	Value
+Classification	Binary
+Original Resolution	512 × 512
+Model Input	384 × 384
+Classes	Normal, Glaucoma
+
+The dataset was separated into training, validation, and test sets so that model training, validation, and final performance evaluation were performed on independent data.
+
+Why ConvNeXt-Tiny?
+
+ConvNeXt-Tiny was selected because it provides a practical balance between feature extraction capability, classification performance, computational requirements, and deployment feasibility.
+
+The model was adapted to the retinal image classification task using transfer learning and fine-tuning, allowing pretrained visual representations to be specialized for the target dataset.
+
+Methodology
+1. Image Preprocessing
+
+Uploaded retinal images are:
+
+Resized to 384 × 384
+Converted to RGB
+Converted into model-ready numerical input
+Batched before inference
+2. Model Development
+Architecture: ConvNeXt-Tiny
+Approach: Transfer Learning + Fine-Tuning
+Task: Binary Classification
+Classes: Normal / Glaucoma
+3. Evaluation
+
+The model was evaluated on an independent test set using:
+
+Accuracy
+ROC-AUC
+Precision
+Recall
+F1-Score
+Error analysis
+Model Performance
+Metric	Result
+Test Accuracy	89.35%
+ROC-AUC	0.953
+Test Samples	770
+
+The model achieved 89.35% test accuracy with a 0.953 ROC-AUC, indicating strong discrimination between the evaluated Normal and Glaucoma classes.
+
+Prediction Pipeline
+User Upload
+     ↓
+Image Validation
+     ↓
+Image Resize
+     ↓
+RGB Conversion
+     ↓
+Model Input Preparation
+     ↓
+ConvNeXt-Tiny Inference
+     ↓
+Probability
+     ↓
+Confidence Score
+     ↓
+Risk Assessment
+     ↓
+Prediction Explanation
+     ↓
+PDF Report
+Application Features
+AI Features
+Glaucoma classification
+Confidence score
+Probability estimation
+Risk-level assessment
+Prediction explanation
+Application Features
+Retinal image upload
+Image preview
+Real-time inference
+Automated PDF report
+Error handling
+Light and dark theme support
+Browser-based interface
+Deployment
+GitHub-based version control
+Streamlit Community Cloud deployment
+Cloud-based model retrieval
+End-to-end deployed inference
+Engineering Highlights
+Built an end-to-end computer vision inference pipeline.
+Applied transfer learning and fine-tuning with ConvNeXt-Tiny.
+Evaluated performance using multiple classification metrics.
+Integrated the trained model with Streamlit.
+Implemented automated PDF report generation.
+Added confidence and risk assessment logic.
+Separated prediction and reporting functionality into modular utilities.
+Resolved deployment issues involving Python/TensorFlow compatibility, dependency installation, memory constraints, and cloud runtime configuration.
+System Architecture
+                    GLAUCOVISION AI
+                           |
+             +-------------+-------------+
+             |                           |
+        Streamlit UI                ML Pipeline
+             |                           |
+       Image Upload               ConvNeXt-Tiny
+             |                           |
+       Image Preview               Prediction
+             |                           |
+             +-------------+-------------+
+                           |
+                  Confidence / Risk
+                           |
+                    PDF Generation
+                           |
+                    User Download
+Current Limitation
+
+The current model assumes that the uploaded image is a retinal fundus image.
+
+Since the classifier is trained for only two classes, arbitrary non-retinal images may still be assigned to either Normal or Glaucoma.
+
+A stronger production-oriented pipeline would first validate whether the uploaded image is actually a retinal fundus image.
+
+Uploaded Image
+      ↓
+Fundus Image Validation
+      ↓
+   Valid Image?
+    /       \
+   No       Yes
+   ↓         ↓
+Reject    ConvNeXt-Tiny
+             ↓
+       Normal / Glaucoma
+
+This is a planned improvement using fundus-image validation or out-of-distribution detection.
+
+Future Improvements
+Fundus-image validation
+Out-of-distribution detection
+Grad-CAM explainability
+Larger and more diverse datasets
+External validation
+Probability calibration
+Multi-disease retinal screening
+Model optimization for lower-latency inference
+Technology Stack
+Category	Technologies
+Programming	Python
+Deep Learning	TensorFlow, Keras
+Model	ConvNeXt-Tiny
+Image Processing	Pillow, NumPy
+Web Application	Streamlit
+PDF Generation	ReportLab
+Model Retrieval	gdown
+Version Control	Git, GitHub
+Deployment	Streamlit Community Cloud
+Project Structure
+GLAUCOVISION_AI_DEPLOY/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── assets/
+│   ├── doctor_bg.jpg
+│   ├── glaucoma_eye.jpg
+│   └── healthy_eye.jpg
+│
+├── utils/
+│   ├── __init__.py
+│   ├── predict.py
+│   ├── gradcam.py
+│   └── pdf_report.py
+│
+└── notebooks/
+    └── Glaucoma_detection.ipynb
+Local Setup
+Clone Repository
+git clone https://github.com/saiii-vardhan08/GLAUCOVISION_AI_DEPLOY.git
+cd GLAUCOVISION_AI_DEPLOY
+Install Dependencies
+pip install -r requirements.txt
+Run Application
+streamlit run app.py
+Medical Disclaimer
+
+GLAUCOVISION AI is an educational and research-oriented screening system, not a medical diagnostic device.
+
+Model predictions may contain false positives and false negatives. The system should not replace professional ophthalmological examination, diagnosis, or treatment.
+
+Author
+K. Saivardhan Goud
+
+B.Tech — Electronics & Communication Engineering
+KL University, Hyderabad
+
+Current CGPA: 9.84
+
+Areas of Interest
+Artificial Intelligence
+Machine Learning
+Deep Learning
+Computer Vision
+Generative AI
+End-to-End AI Engineering
+
+Focused on building practical AI systems that combine problem identification, data analysis, model development, evaluation, optimization, software engineering, and deployment.
+
+Links
+GitHub: https://github.com/saiii-vardhan08
+LinkedIn: https://www.linkedin.com/in/saivardhangoudk08
+Live Demo: https://glaucovisionai-2gmtotw5bz5epjwxdpygry.streamlit.app/
