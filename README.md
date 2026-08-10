@@ -332,6 +332,9 @@ Model predictions may contain false positives and false negatives. The system sh
 **KL University, Hyderabad**
 
 **Current CGPA: 9.84**
+### Specialization
+
+**Generative AI**
 
 ### Areas of Interest
 
