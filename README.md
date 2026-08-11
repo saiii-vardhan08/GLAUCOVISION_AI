@@ -179,28 +179,6 @@ The ROC curve achieves an **AUC of 0.9536**, indicating strong ranking ability a
 
 ---
 
-# Explainability with Grad-CAM
-
-To make the model's predictions more interpretable, **Grad-CAM** was used to visualize image regions contributing to a prediction.
-
-### Example Fundus Image
-
-<p align="center">
-  <img src="assets/fundus_sample.png" alt="Retinal fundus image used for Grad-CAM analysis" width="430">
-</p>
-
-### Grad-CAM Overlay
-
-<p align="center">
-  <img src="assets/gradcam_overlay.png" alt="Grad-CAM overlay on retinal fundus image" width="620">
-</p>
-
-The visualization highlights image regions that contributed to the model's prediction. Grad-CAM is used here as an **interpretability aid**, rather than as evidence of clinically validated anatomical reasoning.
-
-> The current Grad-CAM visualization should not be interpreted as proving that the model relies exclusively on clinically relevant structures. Further validation across a larger set of images would be required for stronger explainability claims.
-
----
-
 ##  Prediction Pipeline
 
 ```text
